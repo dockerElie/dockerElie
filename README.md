@@ -10,7 +10,7 @@ This repo is for demonstrating how we implement a docker infrastructure for the 
 
 ## Objectives
 
-Our Objectif was to help them to build a Docker infrastructure which consist of
+Our Objectif was to help them to build a Docker infrastructure which consisted of
 - building their API image by providing with them the *docker file*
 - versionning their infrastructure release by providing with them *the docker-compose.yml*
 - creating their *docker private registry* where they can store their API image and used it when they want
