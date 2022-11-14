@@ -1,0 +1,28 @@
+version: '3.1'
+services:
+  frontend:
+    image: php:apache
+    depends_on:
+      - backend-api
+    ports:
+      - "8081:80"
+    volumes:
+      - ./website:/var/www/html
+    environment:
+      - USERNAME=toto
+      - PASSWORD=python
+    networks:
+      - pozos_network
+  backend-api:
+    image: pozos-api
+    build:
+      context: ./simple_api/
+      dockerfile: Dockerfile
+    ports:
+      - "8090:5000"
+    volumes:
+      - ./simple_api/student_age.json:/data/student_age.json
+    networks:
+      - pozos_network
+networks:
+  pozos_network:
